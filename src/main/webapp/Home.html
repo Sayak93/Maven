@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<script src="jquery-3.2.1.js"></script>
+<script>
+	$(document).ready(function(){
+		$.ajax({
+			type:"POST",
+			url:"registerResult.jsp",
+			success:function(e){
+			$("#userName").html("Welcome "+e);
+			}
+		});
+	});
+	
+	
+	$("#vp").on("submit",function(){
+		ViewProfile();
+	});
+	/*$("#ep").on("click",editProfile());
+	$("#dp").on("click",deleteProfile());
+	$("#va").on("click",ViewAll());
+	$("#ser").on("click",search());*/
+	
+	
+	function ViewProfile(){
+		$.ajax({
+			type:"POST",
+			url:"register.htm"
+				
+		});
+	}/*
+function editProfile(){
+		
+	}
+function deleteProfile(){
+	
+}
+function ViewAll(){
+	
+}
+function search(){
+	
+}*/
+</script>
+</head>
+<body>
+<div><h1 id="userName" style="color:red"></h1></div>
+
+</body>
+</html>
